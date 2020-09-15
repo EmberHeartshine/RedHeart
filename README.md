@@ -27,7 +27,8 @@ RedHeart is designed to run on a simple web server and should require very littl
 						"verifiedBy": "someOtherPerson"
 					}
 				]
-			}]
+			}
+		]
 	}
 }
 ```
