@@ -1,0 +1,33 @@
+body{
+	text-align: center;
+	background-color: #2C2F33;
+	padding-top: 5px;
+	padding-bottom: 0px;
+}
+label, div{
+	font-family: 'Catamaran', sans-serif;
+	font-size: 12pt;
+	color: #FFF;
+	text-shadow: 2px 2px 2px #111;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	line-height: 1.2;
+}
+h1{
+	font-family: 'Catamaran', sans-serif;
+	font-weight: 900;
+	font-size: 18pt;
+	color:#FFF;
+	text-shadow: 3px 3px 4px #111;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+a{
+	color: #99AAB5;
+}
+select:focus{
+	outline:0 !important;
+}
+.spacedout{
+	padding-left: 100px;
+}
