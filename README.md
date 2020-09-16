@@ -1,10 +1,11 @@
+![RedHeart Logo](/_img/rhLogo.svg)
 # RedHeart
 A team donation/goal contest tracking tool utilizing JSON ~~and IndexedDB~~ and nothing else because I'm bad at JavaScript and IndexedDB is beyond my capabilities right now.
 
 ## Getting Started
 RedHeart is designed to run on a simple web server and should require very little configuration. Simply place all of the files in the [\_dist directory](/RedHeart_dist) into a Web-facing directory and edit `config.js` to your liking. The "database" itself is simple flat JSON following this format:
 
-```
+``` json
 {
 	"teams": {
 		"_meta": {
