@@ -1,6 +1,8 @@
-var rhVersion = "0.0.1";
+const rhVersion = "0.0.2";
 var jsonObj;
 async function rhInit(){
+	const pageHeader = document.getElementById( "pageHeader" );
+	pageHeader.innerHTML = pageTitle;
 	if ( includeBranding === true ) {
 		document.title = pageTitle + " - RedHeart v" + rhVersion;
 	} else {
@@ -15,22 +17,55 @@ function showTeam( listValue ){
 	const teamTitle = document.getElementById( "teamTitle" );
 	var teamDiv = document.createElement( "div" );
 	teamDiv.id = "teamList";
+	let headerDiv = document.createElement( "div" );
+	let headerDivCol1 = document.createElement ( "div" );
+	let headerDivCol2 = document.createElement ( "div" );
+	headerDiv.classList.add( "divRow" );
+	headerDivCol1.classList.add( "divCol", "divHeader" );
+	headerDivCol2.classList.add( "divCol", "divHeader" );
 	if ( listValue === "sum" ) {
 		teamTitle.innerHTML = "Summary";
+		headerDivCol1.appendChild( document.createTextNode( headerTeam ) );
+		headerDivCol2.appendChild( document.createTextNode( headerTeamCount ) );
+		headerDiv.appendChild( headerDivCol1 );
+		headerDiv.appendChild( headerDivCol2 );
+		teamDiv.appendChild( headerDiv );
 		for ( let i = 0; i < objectLen( jsonObj.teams._teams ); i++ ) {
 			let newDiv = document.createElement( "div" );
-			newDiv.classList.add( "spacedout" );
+			let nameCol = document.createElement( "div" );
+			let teamCol = document.createElement( "div" );
 			let newContent = document.createTextNode( Object.values( jsonObj.teams._teams )[i].name );
-			newDiv.appendChild( newContent );
+			let teamCount = document.createTextNode( objectLen( jsonObj.teams._teams[i] ) );
+			newDiv.classList.add( "divRow" );
+			nameCol.classList.add( "divCol" );
+			teamCol.classList.add( "divCol" );
+			nameCol.appendChild( newContent );
+			teamCol.appendChild( teamCount );
+			newDiv.appendChild( nameCol );
+			newDiv.appendChild( teamCol );
 			teamDiv.appendChild( newDiv );
 		};
 	} else {
-		teamTitle.innerHTML = Object.values( jsonObj.teams._teams )[parseInt( listValue )].name
+		let headerDivCol3 = document.createElement ( "div" );
+		headerDivCol3.classList.add( "divCol", "divHeader" );
+		teamTitle.innerHTML = Object.values( jsonObj.teams._teams )[parseInt( listValue )].name;
+		headerDivCol1.appendChild( document.createTextNode( headerMemberName ) );
+		headerDivCol2.appendChild( document.createTextNode( headerMemberDate ) );
+		headerDivCol3.appendChild( document.createTextNode( headerMemberVerify ) );
+		headerDiv.appendChild( headerDivCol1 );
+		headerDiv.appendChild( headerDivCol2 );
+		headerDiv.appendChild( headerDivCol3 );
+		teamDiv.appendChild( headerDiv );
 		for ( let i = 0; i < objectLen( jsonObj.teams._teams[parseInt( listValue )].members ); i++ ) {
 			let newDiv = document.createElement( "div" );
-			newDiv.classList.add( "spacedout" );
-			let newContent = document.createTextNode( Object.values( jsonObj.teams._teams )[parseInt( listValue )].members[i].memberName );
-			newDiv.appendChild( newContent );
+			newDiv.classList.add( "divRow" );
+			for ( let n = 0; n < objectLen( jsonObj.teams._teams[parseInt( listValue )].members[i] ); n++ ) {
+				let newCol = document.createElement( "div" );
+				let newContent = document.createTextNode( Object.values( Object.values( jsonObj.teams._teams )[parseInt( listValue )].members[i] )[n] );
+				newCol.classList.add( "divCol" );
+				newCol.appendChild( newContent );
+				newDiv.appendChild( newCol );
+			}
 			teamDiv.appendChild( newDiv );
 		};
 	};

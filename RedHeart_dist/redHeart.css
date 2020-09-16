@@ -12,11 +12,21 @@ label, div{
 	margin-top: 0px;
 	margin-bottom: 0px;
 	line-height: 1.2;
+	transition-duration:0.25s;
 }
 h1{
 	font-family: 'Catamaran', sans-serif;
-	font-weight: 900;
+	font-weight: bold;
 	font-size: 18pt;
+	color:#FFF;
+	text-shadow: 3px 3px 4px #111;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+h2{
+	font-family: 'Catamaran', sans-serif;
+	font-weight: bold;
+	font-size: 16pt;
 	color:#FFF;
 	text-shadow: 3px 3px 4px #111;
 	margin-top: 0px;
@@ -28,6 +38,34 @@ a{
 select:focus{
 	outline:0 !important;
 }
-.spacedout{
-	padding-left: 100px;
+.divCol{
+	float: left;
+	text-align: center;
+	line-height: 3em;
+	width: 30%;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: solid 1px #000;
+}
+.divHeader{
+	font-weight: bold;
+}
+.divRow{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.divRow:hover{
+	background-color: #13191c;
+}
+#contentBox{
+	display: flex;
+	justify-content: center;
+	max-width: 80%;
+	width: 760px;
+	margin: 0 auto;
+}
+#teamList{
+	width: 100%;
+	display: block;
 }
