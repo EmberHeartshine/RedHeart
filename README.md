@@ -9,7 +9,7 @@ RedHeart is designed to run on a simple web server and should require very littl
 	"teams": {
 		"_meta": {
 			"version": 1,
-			"date": "2020-09-15T00:00:00.000Z",
+			"date": "2020-09-15",
 			"updatedBy": "somePerson"
 		},
 		"_teams": [
@@ -18,12 +18,12 @@ RedHeart is designed to run on a simple web server and should require very littl
 				"members": [
 					{
 						"memberName": "Team 1 Member 1 Name Here",
-						"memberDate": "2020-08-20T00:00:00.000Z",
+						"memberDate": "2020-08-20",
 						"verifiedBy": "somePerson"
 					},
 					{
 						"memberName": "Team 1 Member 2 Name here",
-						"memberDate": "2020-08-25T00:00:00.000Z",
+						"memberDate": "2020-08-25",
 						"verifiedBy": "someOtherPerson"
 					}
 				]
@@ -37,7 +37,6 @@ The database JSON file does not need to be stored on the same server as the rest
 The following fields are optional and can be safely deleted (since they're more for your reference anyway):
 * `_meta.date`
 * `_meta.updatedBy`
-* `_teams[i].members.verifiedBy`
 
 As I work on this project more I plan to create a page that can generate valid JSON for the purposes of this tool, but that's very far in the future and may never happen.
 
