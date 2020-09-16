@@ -34,7 +34,7 @@ function showTeam( listValue ){
 			let newDiv = document.createElement( "div" );
 			let nameCol = document.createElement( "div" );
 			let teamCol = document.createElement( "div" );
-			let newContent = document.createTextNode( Object.values( jsonObj.teams._teams )[i].name );
+			let newContent = document.createTextNode( jsonObj.teams._teams[i].name );
 			let teamCount = document.createTextNode( objectLen( jsonObj.teams._teams[i] ) );
 			newDiv.classList.add( "divRow" );
 			nameCol.classList.add( "divCol" );
@@ -48,7 +48,7 @@ function showTeam( listValue ){
 	} else {
 		let headerDivCol3 = document.createElement ( "div" );
 		headerDivCol3.classList.add( "divCol", "divHeader" );
-		teamTitle.innerHTML = Object.values( jsonObj.teams._teams )[parseInt( listValue )].name;
+		teamTitle.innerHTML = jsonObj.teams._teams[parseInt( listValue )].name;
 		headerDivCol1.appendChild( document.createTextNode( headerMemberName ) );
 		headerDivCol2.appendChild( document.createTextNode( headerMemberDate ) );
 		headerDivCol3.appendChild( document.createTextNode( headerMemberVerify ) );
@@ -61,7 +61,7 @@ function showTeam( listValue ){
 			newDiv.classList.add( "divRow" );
 			for ( let n = 0; n < objectLen( jsonObj.teams._teams[parseInt( listValue )].members[i] ); n++ ) {
 				let newCol = document.createElement( "div" );
-				let newContent = document.createTextNode( Object.values( Object.values( jsonObj.teams._teams )[parseInt( listValue )].members[i] )[n] );
+				let newContent = document.createTextNode( Object.values( jsonObj.teams._teams[parseInt( listValue )].members[i] )[n] );
 				newCol.classList.add( "divCol" );
 				newCol.appendChild( newContent );
 				newDiv.appendChild( newCol );
@@ -75,7 +75,7 @@ function initTeams(){
 	const teamList = document.getElementById( "teamDrop" );
 	for ( let i = 0; i < objectLen( jsonObj.teams._teams ); i++ ) {
 		let teamOption = document.createElement( "option" );
-		teamOption.text = Object.values( jsonObj.teams._teams )[i].name;
+		teamOption.text = jsonObj.teams._teams[i].name;
 		teamOption.value = i;
 		teamList.add( teamOption );
 	};
