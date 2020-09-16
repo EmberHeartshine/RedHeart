@@ -43,8 +43,11 @@ select:focus{
 	text-align: center;
 	line-height: 3em;
 	width: 30%;
-	padding-left: 10px;
-	padding-right: 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-left: 5px;
+	padding-right: 5px;
 	border: solid 1px #000;
 }
 .divHeader{
