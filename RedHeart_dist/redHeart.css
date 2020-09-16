@@ -61,7 +61,7 @@ select:focus{
 #contentBox{
 	display: flex;
 	justify-content: center;
-	max-width: 80%;
+	max-width: 90%;
 	width: 760px;
 	margin: 0 auto;
 }
