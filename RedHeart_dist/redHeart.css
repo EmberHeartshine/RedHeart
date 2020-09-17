@@ -4,45 +4,46 @@ body{
 	padding-top: 5px;
 	padding-bottom: 0px;
 }
-label, div{
-	font-family: 'Catamaran', sans-serif;
+label, tr, p{
+	font-family: sans-serif;
 	font-size: 12pt;
 	color: #FFF;
 	text-shadow: 2px 2px 2px #111;
-	margin-top: 0px;
+	margin-top: 5px;
 	margin-bottom: 0px;
 	line-height: 1.2;
 	transition-duration:0.25s;
 }
 h1{
-	font-family: 'Catamaran', sans-serif;
+	font-family: sans-serif;
 	font-weight: bold;
 	font-size: 18pt;
 	color:#FFF;
 	text-shadow: 3px 3px 4px #111;
 	margin-top: 0px;
-	margin-bottom: 0px;
+	margin-bottom: 5px;
 }
 h2{
-	font-family: 'Catamaran', sans-serif;
+	font-family: sans-serif;
 	font-weight: bold;
 	font-size: 16pt;
 	color:#FFF;
 	text-shadow: 3px 3px 4px #111;
-	margin-top: 0px;
-	margin-bottom: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 a{
 	color: #99AAB5;
 }
-select:focus{
-	outline:0 !important;
+table{
+	width: 100%;
+	margin: 0 auto;
 }
-.divCol{
-	float: left;
+td, th{
 	text-align: center;
 	line-height: 3em;
-	width: 30%;
+	width: 25%;
+	max-width: 0;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -50,20 +51,20 @@ select:focus{
 	padding-right: 5px;
 	border: solid 1px #000;
 }
-.divHeader{
+th{
 	font-weight: bold;
 }
-.divRow{
-	display: flex;
-	align-items: center;
-	justify-content: center;
+tr{
+	text-align: center;
+	vertical-align: center;
 }
-.divRow:hover{
+select:focus{
+	outline:0 !important;
+}
+tr:hover{
 	background-color: #13191c;
 }
 #contentBox{
-	display: flex;
-	justify-content: center;
 	max-width: 90%;
 	width: 760px;
 	margin: 0 auto;
@@ -75,5 +76,4 @@ select:focus{
 }
 #teamList{
 	width: 100%;
-	display: block;
 }
