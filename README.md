@@ -41,7 +41,7 @@ The following fields are optional and can be safely deleted:
 * `_meta.date`
 * `_meta.updatedBy`
 
-The `memberScore` field is intended for a function that has not been implemented yet, but **must** be included. In mode 1, the score will always read 1.
+The `memberScore` field is intended for a function that has not been implemented yet, but **must** be included. In mode 1, the score will display in team view but will not contribute to the total team score in the summary view.
 
 As I work on this project more I plan to create a page that can generate valid JSON for the purposes of this tool, but that's very far in the future and may never happen.
 
