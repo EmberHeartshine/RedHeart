@@ -20,14 +20,14 @@ RedHeart is designed to run on a simple web server and should require very littl
 					{
 						"memberName": "Team 1 Member 1 Name Here",
 						"memberDate": "2020-08-20",
-						"verifiedBy": "somePerson",
-						"memberScore": 1
+						"memberScore": 1,
+						"verifiedBy": "somePerson"
 					},
 					{
 						"memberName": "Team 1 Member 2 Name here",
 						"memberDate": "2020-08-25",
-						"verifiedBy": "someOtherPerson",
-						"memberScore": 3
+						"memberScore": 3,
+						"verifiedBy": "someOtherPerson"
 					}
 				]
 			}
