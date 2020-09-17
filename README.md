@@ -53,3 +53,5 @@ If you're unfamiliar with JSON, I recommend a generator such as [ObjGen](http://
 
 ## Demo
 There is a demo of this site located [here](https://emberheartshine.github.io/RedHeart/RedHeart_dist/). All information is loaded directly from this repo, and the site automatically updates whenever a change is pushed. This is the actual ideal use case model I am building around.
+
+The demo is in mode 1.
