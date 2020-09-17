@@ -20,11 +20,13 @@ RedHeart is designed to run on a simple web server and should require very littl
 					{
 						"memberName": "Team 1 Member 1 Name Here",
 						"memberDate": "2020-08-20",
+						"memberScore": 1,
 						"verifiedBy": "somePerson"
 					},
 					{
 						"memberName": "Team 1 Member 2 Name here",
 						"memberDate": "2020-08-25",
+						"memberScore": 3,
 						"verifiedBy": "someOtherPerson"
 					}
 				]
@@ -35,9 +37,10 @@ RedHeart is designed to run on a simple web server and should require very littl
 ```
 The database JSON file does not need to be stored on the same server as the rest of the files, but be sure to edit the `dbUrl` variable in `config.js` to point to the new location.
 
-The following fields are optional and can be safely deleted (since they're more for your reference anyway):
+The following fields are optional and can be safely deleted (the `memberScore` field is intended for a function that has not been implemented yet):
 * `_meta.date`
 * `_meta.updatedBy`
+* `_teams[i].members[n].memberScore`
 
 As I work on this project more I plan to create a page that can generate valid JSON for the purposes of this tool, but that's very far in the future and may never happen.
 
