@@ -45,7 +45,26 @@ All other fields are required (including `memberScore` if using mode 1).
 
 As I work on this project more I plan to create a page that can generate valid JSON for the purposes of this tool, but that's very far in the future and may never happen.
 
-If you're unfamiliar with JSON, I recommend a generator such as [ObjGen](http://www.objgen.com/json) to help you out.
+If you're unfamiliar with JSON, I recommend a generator such as [ObjGen](http://www.objgen.com/json) to help you out. For example, pasting the following into ObjGen will generate the JSON seen in the example above:
+```
+teams
+  _meta
+    version n=1
+    date d
+    updatedBy=somePerson
+  _teams[0]
+    name=Team 1 Name Here
+    members[0]
+      memberName=Team 1 Member 1 Name Here
+      memberDate d
+      memberScore n=1
+      verifiedBy=somePerson
+    members[1]
+      memberName=Team 1 Member 2 Name Here
+      memberDate d
+      memberScore n=1
+      verifiedBy=someOtherPerson
+```
 
 ## Modes
 * **Mode 1** (`contestMode = 1;`) is recruitment mode; that is, the team's total score will be determined by the number of members on that team. This can be useful for individual events, such as blood donation or one-time volunteering opportunities. In mode 1, a member's score will read as "N/A" regardless of `memberScore` value and will not contribute to the total team score in the summary view.
