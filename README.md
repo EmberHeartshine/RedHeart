@@ -41,14 +41,14 @@ The following fields are optional and can be safely deleted:
 * `_meta.date`
 * `_meta.updatedBy`
 
-The `memberScore` field is intended for mode 2, but **must** be included. In mode 1, the score will read as "N/A" regardless of value and will not contribute to the total team score in the summary view.
+All other fields are required (including `memberScore` if using mode 1).
 
 As I work on this project more I plan to create a page that can generate valid JSON for the purposes of this tool, but that's very far in the future and may never happen.
 
 If you're unfamiliar with JSON, I recommend a generator such as [ObjGen](http://www.objgen.com/json) to help you out.
 
 ## Modes
-* **Mode 1** (`contestMode = 1;`) is recruitment mode; that is, the team's total score will be determined by the number of members on that team. This can be useful for individual events, such as blood donation or one-time volunteering opportunities.
+* **Mode 1** (`contestMode = 1;`) is recruitment mode; that is, the team's total score will be determined by the number of members on that team. This can be useful for individual events, such as blood donation or one-time volunteering opportunities. In mode 1, a member's score will read as "N/A" regardless of `memberScore` value and will not contribute to the total team score in the summary view.
 * **Mode 2** (`contestMode = 2;`) is score accrual mode; that is, the team's total score will be determined by the sum of each member's `memberScore` value. This is useful for events that can have multiple individual contributions, such as charity walks or food drives.
 
 ## Demo
