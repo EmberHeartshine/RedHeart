@@ -67,7 +67,7 @@ If you're unfamiliar with JSON, I recommend a generator such as [ObjGen](https:/
 * `headerMemberName`: The header item above the member names in team view.
 * `headerMemberDate`: The header item above the member join/donate dates in team view.
 * `headerMemberScore`: The header item above the score in team view. This will usually be the same as `headerScore` above.
-* `headerMemberVerify`: The header item above the verifying name in team view.
+* `headerMemberVerify`: The header item above the verifying name in team view. You could hypothetically use this column for any arbitrary extra data you want to display.
 
 ### Modes
 * **Mode 1** (`"contestMode": 1,`) is recruitment mode; that is, the team's total score will be determined by the number of members on that team. This can be useful for individual events, such as blood donation or one-time volunteering opportunities. In mode 1, a member's score will read as "N/A" regardless of `memberScore` value and will not contribute to the total team score in the summary view.
