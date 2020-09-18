@@ -1,148 +1,159 @@
 {
-	"teams": {
-		"_meta": {
-			"version": 1,
-			"date": "2020-09-17",
-			"updatedBy": "somePerson"
+	"_meta": {
+		"version": 1,
+		"date": "2020-09-17",
+		"updatedBy": "somePerson"
+	},
+	"_config": {
+		"pageTitle": "Example Config",
+		"includeBranding": true,
+		"contestMode": 2,
+		"headers": {
+			"headerTeam": "Team Name",
+			"headerScore": "Score",
+			"headerMemberName": "Name/Handle",
+			"headerMemberDate": "Date Donated",
+			"headerMemberScore": "Score",
+			"headerMemberVerify": "Verified By"
+		}
+	},
+	"_teams": [
+		{
+			"name": "Team 1",
+			"members": [
+				{
+					"memberName": "John Doe",
+					"memberDate": "2020-08-20",
+					"memberScore": 1,
+					"verifiedBy": "somePerson"
+				},
+				{
+					"memberName": "Jane Doe",
+					"memberDate": "2020-08-25",
+					"memberScore": 1,
+					"verifiedBy": "someOtherPerson"
+				}
+			]
 		},
-		"_teams": [
-			{
-				"name": "Team 1",
-				"members": [
-					{
-						"memberName": "John Doe",
-						"memberDate": "2020-08-20",
-						"memberScore": 1,
-						"verifiedBy": "somePerson"
-					},
-					{
-						"memberName": "Jane Doe",
-						"memberDate": "2020-08-25",
-						"memberScore": 1,
-						"verifiedBy": "someOtherPerson"
-					}
-				]
-			},
-			{
-				"name": "Team 2",
-				"members": [
-					{
-						"memberName": "Jimmy Doe",
-						"memberDate": "2020-08-20",
-						"memberScore": 1,
-						"verifiedBy": "someOtherPerson"
-					},
-					{
-						"memberName": "Jessica Doe",
-						"memberDate": "2020-08-20",
-						"memberScore": 2,
-						"verifiedBy": "somePerson"
-					}
-				]
-			},
-			{
-				"name": "Team 3",
-				"members": [
-					{
-						"memberName": "Jack Doe",
-						"memberDate": "2020-08-20",
-						"memberScore": 1,
-						"verifiedBy": "someOtherPerson"
-					},
-					{
-						"memberName": "Julia Doe",
-						"memberDate": "2020-08-20",
-						"memberScore": 3,
-						"verifiedBy": "somePerson"
-					},
-					{
-						"memberName": "Jeramiah Doe",
-						"memberDate": "2020-08-20",
-						"memberScore": 1,
-						"verifiedBy": "somePerson"
-					}
-				]
-			},
-			{
-				"name": "Team 4",
-				"members": [
-					{
-						"memberName": "Jacob Doe",
-						"memberDate": "2020-08-20",
-						"memberScore": 1,
-						"verifiedBy": "someOtherPerson"
-					},
-					{
-						"memberName": "Jasmine Doe",
-						"memberDate": "2020-08-20",
-						"memberScore": 3,
-						"verifiedBy": "somePerson"
-					}
-				]
-			},
-			{
-				"name": "Team 5",
-				"members": [
-					{
-						"memberName": "Jenson Doe",
-						"memberDate": "2020-08-20",
-						"memberScore": 1,
-						"verifiedBy": "someOtherPerson"
-					},
-					{
-						"memberName": "Jade Doe",
-						"memberDate": "2020-08-20",
-						"memberScore": 2,
-						"verifiedBy": "somePerson"
-					},
-					{
-						"memberName": "Janice Doe",
-						"memberDate": "2020-08-20",
-						"memberScore": 4,
-						"verifiedBy": "somePerson"
-					},
-					{
-						"memberName": "Jed Doe",
-						"memberDate": "2020-08-20",
-						"memberScore": 1,
-						"verifiedBy": "someOtherPerson"
-					}
-				]
-			},
-			{
-				"name": "Team 6",
-				"members": [
-					{
-						"memberName": "Jay Doe",
-						"memberDate": "2020-08-20",
-						"memberScore": 1,
-						"verifiedBy": "someOtherPerson"
-					},
-					{
-						"memberName": "Jennifer Doe",
-						"memberDate": "2020-08-20",
-						"memberScore": 0,						
-						"verifiedBy": "somePerson"
-					}
-				]
-			},
-			{
-				"name": "Team 7",
-				"members": [
-					{
-						"memberName": "Jauden Doe",
-						"memberDate": "2020-08-20",
-						"memberScore": 4,
-						"verifiedBy": "someOtherPerson"
-					},
-					{
-						"memberName": "Josie Doe",
-						"memberDate": "2020-08-20",
-						"memberScore": 2,
-						"verifiedBy": "somePerson"
-					}
-				]
-			}
-		]
-	}
+		{
+			"name": "Team 2",
+			"members": [
+				{
+					"memberName": "Jimmy Doe",
+					"memberDate": "2020-08-20",
+					"memberScore": 1,
+					"verifiedBy": "someOtherPerson"
+				},
+				{
+					"memberName": "Jessica Doe",
+					"memberDate": "2020-08-20",
+					"memberScore": 2,
+					"verifiedBy": "somePerson"
+				}
+			]
+		},
+		{
+			"name": "Team 3",
+			"members": [
+				{
+					"memberName": "Jack Doe",
+					"memberDate": "2020-08-20",
+					"memberScore": 1,
+					"verifiedBy": "someOtherPerson"
+				},
+				{
+					"memberName": "Julia Doe",
+					"memberDate": "2020-08-20",
+					"memberScore": 3,
+					"verifiedBy": "somePerson"
+				},
+				{
+					"memberName": "Jeramiah Doe",
+					"memberDate": "2020-08-20",
+					"memberScore": 1,
+					"verifiedBy": "somePerson"
+				}
+			]
+		},
+		{
+			"name": "Team 4",
+			"members": [
+				{
+					"memberName": "Jacob Doe",
+					"memberDate": "2020-08-20",
+					"memberScore": 1,
+					"verifiedBy": "someOtherPerson"
+				},
+				{
+					"memberName": "Jasmine Doe",
+					"memberDate": "2020-08-20",
+					"memberScore": 3,
+					"verifiedBy": "somePerson"
+				}
+			]
+		},
+		{
+			"name": "Team 5",
+			"members": [
+				{
+					"memberName": "Jenson Doe",
+					"memberDate": "2020-08-20",
+					"memberScore": 1,
+					"verifiedBy": "someOtherPerson"
+				},
+				{
+					"memberName": "Jade Doe",
+					"memberDate": "2020-08-20",
+					"memberScore": 2,
+					"verifiedBy": "somePerson"
+				},
+				{
+					"memberName": "Janice Doe",
+					"memberDate": "2020-08-20",
+					"memberScore": 4,
+					"verifiedBy": "somePerson"
+				},
+				{
+					"memberName": "Jed Doe",
+					"memberDate": "2020-08-20",
+					"memberScore": 1,
+					"verifiedBy": "someOtherPerson"
+				}
+			]
+		},
+		{
+			"name": "Team 6",
+			"members": [
+				{
+					"memberName": "Jay Doe",
+					"memberDate": "2020-08-20",
+					"memberScore": 1,
+					"verifiedBy": "someOtherPerson"
+				},
+				{
+					"memberName": "Jennifer Doe",
+					"memberDate": "2020-08-20",
+					"memberScore": 0,						
+					"verifiedBy": "somePerson"
+				}
+			]
+		},
+		{
+			"name": "Team 7",
+			"members": [
+				{
+					"memberName": "Jauden Doe",
+					"memberDate": "2020-08-20",
+					"memberScore": 4,
+					"verifiedBy": "someOtherPerson"
+				},
+				{
+					"memberName": "Josie Doe",
+					"memberDate": "2020-08-20",
+					"memberScore": 2,
+					"verifiedBy": "somePerson"
+				}
+			]
+		}
+	]
 }

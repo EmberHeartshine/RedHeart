@@ -1,17 +1,21 @@
-const rhVersion = "0.0.3";
+const dbUrl = "db.json";
+// Make sure to edit the line above if your database is stored on a different server or in a different directory than RedHeart
+
+const rhVersion = "0.0.4";
 var jsonObj;
 async function rhInit(){
-	const pageHeader = document.getElementById( "pageHeader" );
-	pageHeader.innerHTML = pageTitle;
-	if ( includeBranding ) {
-		document.title = pageTitle + " - RedHeart v" + rhVersion;
-	} else {
-		document.title = pageTitle;
-	};
+	console.log( "Initializing RedHeart..." );
 	await initJson( dbUrl );
 	await initTeams();
-	console.log( "Contest mode " + contestMode + " enabled." );
+	const pageHeader = document.getElementById( "pageHeader" );
+	pageHeader.innerHTML = jsonObj._config.pageTitle;
+	if ( jsonObj._config.includeBranding ) {
+		document.title = jsonObj._config.pageTitle + " - RedHeart v" + rhVersion;
+	} else {
+		document.title = jsonObj._config.pageTitle;
+	};
 	showTeam( "sum" );
+	console.log( "RedHeart version " + rhVersion + " loaded." );
 };
 function showTeam( listValue ){
 	const teamList = document.getElementById( "teamList" );
@@ -19,29 +23,27 @@ function showTeam( listValue ){
 	const teamTable = document.createElement( "table" );
 	teamTable.id = "teamList";
 	const headerRow = document.createElement( "tr" );
-	const headerTheFirst = document.createElement( "th" );
-	headerTheFirst.setAttribute( "onclick", "sortTable(0);" );
-	const headerTheSecond = document.createElement( "th" );
-	headerTheSecond.setAttribute( "onclick", "sortTable(1);" );
 	if ( listValue === "sum" ) {
 		teamTitle.innerHTML = "Summary";
-		headerTheFirst.appendChild( document.createTextNode( headerTeam ) );
-		headerTheSecond.appendChild( document.createTextNode( headerTeamScore ) );
-		headerRow.appendChild( headerTheFirst );
-		headerRow.appendChild( headerTheSecond );
+		for ( let i = 0; i < 2; i++ ) {
+			let newHeader = document.createElement( "th" );
+			newHeader.setAttribute( "onclick", "sortTable(" + i + ");" );
+			newHeader.appendChild( document.createTextNode( Object.values( jsonObj._config.headers )[i] ) );
+			headerRow.appendChild( newHeader );
+		};
 		teamTable.appendChild( headerRow );
-		for ( let i = 0; i < objectLen( jsonObj.teams._teams ); i++ ) {
+		for ( let i = 0; i < objectLen( jsonObj._teams ); i++ ) {
 			let newRow = document.createElement( "tr" );
 			let nameCol = document.createElement( "td" );
 			let teamCol = document.createElement( "td" );
-			let newName = document.createTextNode( jsonObj.teams._teams[i].name );
+			let newName = document.createTextNode( jsonObj._teams[i].name );
 			let teamScore = null;
-			if ( contestMode === 1 ) {
-				teamScore = document.createTextNode( objectLen( jsonObj.teams._teams[i].members ) );
-			} else if ( contestMode === 2 ) {
+			if ( jsonObj._config.contestMode === 1 ) {
+				teamScore = document.createTextNode( objectLen( jsonObj._teams[i].members ) );
+			} else if ( jsonObj._config.contestMode === 2 ) {
 				let scoreSum = 0;
-				for ( let n = 0; n < objectLen( jsonObj.teams._teams[i].members ); n++ )
-					scoreSum = scoreSum + jsonObj.teams._teams[i].members[n].memberScore;
+				for ( let n = 0; n < objectLen( jsonObj._teams[i].members ); n++ )
+					scoreSum = scoreSum + jsonObj._teams[i].members[n].memberScore;
 				teamScore = document.createTextNode( scoreSum );
 			} else {
 				console.log( "Error: contestMode is not set to a valid integer." );
@@ -54,29 +56,23 @@ function showTeam( listValue ){
 			teamTable.appendChild( newRow );
 		};
 	} else {
-		const headerTheThird = document.createElement ( "th" );
-		headerTheThird.setAttribute( "onclick", "sortTable(2);" );
-		const headerTheFourth = document.createElement ( "th" );
-		headerTheFourth.setAttribute( "onclick", "sortTable(3);" );
-		teamTitle.innerHTML = jsonObj.teams._teams[parseInt( listValue )].name;
-		headerTheFirst.appendChild( document.createTextNode( headerMemberName ) );
-		headerTheSecond.appendChild( document.createTextNode( headerMemberDate ) );
-		headerTheThird.appendChild( document.createTextNode( headerTeamScore ) );
-		headerTheFourth.appendChild( document.createTextNode( headerMemberVerify ) );
-		headerRow.appendChild( headerTheFirst );
-		headerRow.appendChild( headerTheSecond );
-		headerRow.appendChild( headerTheThird );
-		headerRow.appendChild( headerTheFourth );
+		teamTitle.innerHTML = jsonObj._teams[parseInt( listValue )].name;
+		for ( let i = 2; i < objectLen( jsonObj._config.headers ); i++ ) {
+			let newHeader = document.createElement( "th" );
+			newHeader.setAttribute( "onclick", "sortTable(" + ( i - 2 ) + ");" );
+			newHeader.appendChild( document.createTextNode( Object.values( jsonObj._config.headers )[i] ) );
+			headerRow.appendChild( newHeader );
+		};
 		teamTable.appendChild( headerRow );
-		for ( let i = 0; i < objectLen( jsonObj.teams._teams[parseInt( listValue )].members ); i++ ) {
+		for ( let i = 0; i < objectLen( jsonObj._teams[parseInt( listValue )].members ); i++ ) {
 			let newRow = document.createElement( "tr" );
-			for ( let n = 0; n < objectLen( jsonObj.teams._teams[parseInt( listValue )].members[i] ); n++ ) {
+			for ( let n = 0; n < objectLen( jsonObj._teams[parseInt( listValue )].members[i] ); n++ ) {
 				let newCol = document.createElement( "td" );
 				let newContent = null;
-				if ( contestMode === 1 && n === 2 ) {
+				if ( jsonObj._config.contestMode === 1 && n === 2 ) {
 					newContent = document.createTextNode( "N/A" );
 				} else {
-					newContent = document.createTextNode( Object.values( jsonObj.teams._teams[parseInt( listValue )].members[i] )[n] );
+					newContent = document.createTextNode( Object.values( jsonObj._teams[parseInt( listValue )].members[i] )[n] );
 				};
 				newCol.appendChild( newContent );
 				newRow.appendChild( newCol );
@@ -88,9 +84,9 @@ function showTeam( listValue ){
 };
 function initTeams(){
 	const teamList = document.getElementById( "teamDrop" );
-	for ( let i = 0; i < objectLen( jsonObj.teams._teams ); i++ ) {
+	for ( let i = 0; i < objectLen( jsonObj._teams ); i++ ) {
 		let teamOption = document.createElement( "option" );
-		teamOption.text = jsonObj.teams._teams[i].name;
+		teamOption.text = jsonObj._teams[i].name;
 		teamOption.value = i;
 		teamList.add( teamOption );
 	};
@@ -114,8 +110,8 @@ function sortTable( n ){
 		rows = table.rows;
 		for ( i = 1; i < ( rows.length - 1 ); i++ ) {
 			shouldSwitch = false;
-			x = rows[i].getElementsByTagName("TD")[n];
-			y = rows[i + 1].getElementsByTagName("TD")[n];
+			x = rows[i].getElementsByTagName( "TD" )[n];
+			y = rows[i + 1].getElementsByTagName( "TD" )[n];
 			if ( dir === "asc" ) {
 				if ( x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase() ) {
 				shouldSwitch = true;
@@ -155,5 +151,5 @@ async function initJson( jsonUrl ){
 	const response = await fetch( jsonUrl );
 	const jsonData = await response.text();
 	jsonObj = await JSON.parse( jsonData );
-	console.log( "JSON data v" + jsonObj.teams._meta.version + " loaded!" );
+	console.log( "Database version " + jsonObj._meta.version + " loaded." );
 };
