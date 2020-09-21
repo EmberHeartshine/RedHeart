@@ -119,7 +119,9 @@ function sortTable( n ){
 						break;
 					};
 				} else {
-					if ( parseInt( x.innerHTML ) > parseInt( y.innerHTML) ) {
+					let tempX = parseInt( x.innerHTML.replace(/-/g, "") );
+					let tempY = parseInt( y.innerHTML.replace(/-/g, "") );
+					if ( tempX > tempY ) {
 						shouldSwitch = true;
 						break;
 					};
@@ -131,7 +133,9 @@ function sortTable( n ){
 						break;
 					};
 				} else {
-					if ( parseInt( x.innerHTML ) < parseInt( y.innerHTML) ) {
+					let tempX = parseInt( x.innerHTML.replace(/-/g, "") );
+					let tempY = parseInt( y.innerHTML.replace(/-/g, "") );
+					if ( tempX < tempY ) {
 						shouldSwitch = true;
 						break;
 					};
