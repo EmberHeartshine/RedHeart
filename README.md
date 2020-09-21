@@ -8,9 +8,7 @@ RedHeart is designed to run on a simple web server and should require very littl
 ``` json
 {
 	"_meta": {
-		"version": 1,
-		"date": "2020-09-15",
-		"updatedBy": "somePerson"
+		"version": 1
 	},
 	"_config": {
 		"pageTitle": "Example Config",
@@ -46,13 +44,12 @@ RedHeart is designed to run on a simple web server and should require very littl
 	]
 }
 ```
-The database JSON file does not need to be stored on the same server as the rest of the files, but be sure to edit the `dbUrl` variable in `redHeart.js` to point to the new location.
-
-The following fields are optional and can be safely deleted (since they're just for your reference and aren't used by RedHeart):
-* `_meta.date`
-* `_meta.updatedBy`
-
-All other fields are required (including `memberScore` if using mode 1, though its value will get ignored).
+A few caveats:
+* The database JSON file does not need to be stored on the same server as the rest of the files, but be sure to edit the `dbUrl` variable in `redHeart.js` to point to the new location.
+* Date strings under `memberDate` ***must*** be in the format `YYYY-MM-DD`.
+* I took a shortcut to generate the table that speeds up parsing, but it also means that all fields under each `members` object ***must*** be in the order given.
+* All fields are required (including `memberScore` if using mode 1, though its value will get ignored).
+* You can use the `_meta` object to store any kind of extra data you want, such as a last-changed date. Everything except `version` will be ignored by RedHeart.
 
 As I work on this project more I plan to create a page that can generate valid JSON for the purposes of this tool, but that's very far in the future and may never happen.
 
