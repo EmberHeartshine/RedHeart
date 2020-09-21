@@ -14,8 +14,8 @@
 		},
 		"teamHeaders": {
 			"headerMemberName": "Name/Handle",
-			"headerMemberScore": "Score",
 			"headerMemberDate": "Date Donated",
+			"headerMemberScore": "Score",
 			"headerMemberVerify": "Verified By"
 		}
 	},
@@ -25,14 +25,14 @@
 			"members": [
 				{
 					"memberName": "Spitfire",
-					"memberScore": 8,
 					"memberDate": "2011-02-18",
+					"memberScore": 8,
 					"verifiedBy": "Rainbow Dash"
 				},
 				{
 					"memberName": "Fleetfoot",
-					"memberScore": 5,
 					"memberDate": "2011-12-03",
+					"memberScore": 5,
 					"verifiedBy": "Rarity"
 				}
 			]
