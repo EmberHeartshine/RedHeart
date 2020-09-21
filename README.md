@@ -48,10 +48,9 @@ RedHeart is designed to run on a simple web server and should require very littl
 ```
 A few caveats:
 * The database JSON file does not need to be stored on the same server as the rest of the files, but be sure to edit the `dbUrl` variable in `redHeart.js` to point to the new location.
-* Date strings under `memberDate` should be in the format `YYYY-MM-DD`. If they are not, the column will not sort properly (but if you're OK with that, then have fun).
+* Date strings under `memberDate` ***must*** be in the format `YYYY-MM-DD`.
 * I took a shortcut to generate the table that speeds up parsing, but it also means that all fields under each `members` object must be in the same order as all of `_config.headers.headerMember*` items. The order given is probably the easiest way to go.
 * All fields are required (including `memberScore` if using mode 1, though its value will get ignored).
-  * In theory you can remove `memberScore` from each `members` object, but then you must also remove `_config.teamHeaders.headerMemberScore`.
 * You can use the `_meta` object to store any kind of extra data you want, such as a last-changed date. Everything except `version` will be ignored by RedHeart.
 
 As I work on this project more I plan to create a page that can generate valid JSON for the purposes of this tool, but that's very far in the future and may never happen.
@@ -72,6 +71,9 @@ If you're unfamiliar with JSON, I recommend a generator such as [ObjGen](https:/
 ### Modes
 * **Mode 1** (`"contestMode": 1,`) is recruitment mode; that is, the team's total score will be determined by the number of members on that team. This can be useful for individual events, such as blood donation or one-time volunteering opportunities. In mode 1, a member's score will read as "N/A" regardless of `memberScore` value and will not contribute to the total team score in the summary view.
 * **Mode 2** (`"contestMode": 2,`) is score accrual mode; that is, the team's total score will be determined by the sum of each member's `memberScore` value. This is useful for events that can have multiple individual contributions, such as charity walks or food drives.
+
+## Stylesheet
+There is an `overrides.css` file included, that gets loaded *after* `redHeart.css` (i.e. it will override, since it is lower on the cascade). I suggest putting any style changes you want into this file, and backing it up when you update. This will make sure your style doesn't break in the unlikely event that `index.html` changes.
 
 ## Demo
 There is a demo of this site located [here](https://emberheartshine.github.io/RedHeart/RedHeart_dist/). All information is loaded directly from this repo, and the site automatically updates whenever a change is pushed.
