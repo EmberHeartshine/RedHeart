@@ -15,6 +15,16 @@
 			"headerMemberDate": "Date Donated",
 			"headerMemberScore": "Score",
 			"headerMemberVerify": "Verified By"
+		},
+		"sumHeaders": {
+			"headerTeam": "Team Name",
+			"headerScore": "Score"
+		},
+		"teamHeaders": {
+			"headerMemberName": "Name/Handle",
+			"headerMemberDate": "Date Donated",
+			"headerMemberScore": "Score",
+			"headerMemberVerify": "Verified By"
 		}
 	},
 	"_teams": [
@@ -72,6 +82,12 @@
 					"memberDate": "2010-10-10",
 					"memberScore": 4,
 					"verifiedBy": "Rainbow Dash"
+				},
+				{
+					"memberName": "Babs Seed",
+					"memberDate": "2012-11-24",
+					"memberScore": 3,
+					"verifiedBy": "Applejack"
 				}
 			]
 		},
