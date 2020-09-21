@@ -1,7 +1,7 @@
 const dbUrl = "db.json";
 // Make sure to edit the line above if your database is stored on a different server or in a different directory than RedHeart
 
-const rhVersion = "0.0.5";
+const rhVersion = "0.0.6";
 var jsonObj;
 async function rhInit(){
 	console.log( "Initializing RedHeart..." );
@@ -25,42 +25,41 @@ function showTeam( listValue ){
 	const headerRow = document.createElement( "tr" );
 	if ( listValue === "sum" ) {
 		teamTitle.innerHTML = "Summary";
-		for ( let i = 0; i < 2; i++ ) {
+		for ( let i = 0; i < objectLen( jsonObj._config.sumHeaders ); i++ ) {
 			let newHeader = document.createElement( "th" );
 			newHeader.setAttribute( "onclick", "sortTable(" + i + ");" );
-			newHeader.appendChild( document.createTextNode( Object.values( jsonObj._config.headers )[i] ) );
+			newHeader.appendChild( document.createTextNode( Object.values( jsonObj._config.sumHeaders )[i] ) );
 			headerRow.appendChild( newHeader );
 		};
 		teamTable.appendChild( headerRow );
 		for ( let i = 0; i < objectLen( jsonObj._teams ); i++ ) {
 			let newRow = document.createElement( "tr" );
-			let nameCol = document.createElement( "td" );
-			let teamCol = document.createElement( "td" );
-			let newName = document.createTextNode( jsonObj._teams[i].name );
-			let teamScore = null;
-			if ( jsonObj._config.contestMode === 1 ) {
-				teamScore = document.createTextNode( objectLen( jsonObj._teams[i].members ) );
-			} else if ( jsonObj._config.contestMode === 2 ) {
-				let scoreSum = 0;
-				for ( let n = 0; n < objectLen( jsonObj._teams[i].members ); n++ )
-					scoreSum = scoreSum + jsonObj._teams[i].members[n].memberScore;
-				teamScore = document.createTextNode( scoreSum );
-			} else {
-				console.log( "Error: contestMode is not set to a valid integer." );
-				return 1;	
+			for ( let n = 0; n < objectLen( jsonObj._config.sumHeaders ); n++ ) {
+				let newCol = document.createElement( "td" );
+				let newContent = null;
+				if ( n === Object.keys( jsonObj._config.sumHeaders).indexOf( "headerScore" ) ) {
+					if ( jsonObj._config.contestMode === 1 ) {
+						newContent = document.createTextNode( objectLen( jsonObj._teams[i].members ) );
+					} else {
+						let scoreSum = 0;
+						for ( let m = 0; m < objectLen( jsonObj._teams[i].members ); m++ )
+							scoreSum = scoreSum + jsonObj._teams[i].members[m].memberScore;
+						newContent = document.createTextNode( scoreSum );
+					};
+				} else {
+					newContent = document.createTextNode( jsonObj._teams[i].name );
+				};
+				newCol.appendChild( newContent );
+				newRow.appendChild( newCol );
 			};
-			nameCol.appendChild( newName );
-			teamCol.appendChild( teamScore );
-			newRow.appendChild( nameCol );
-			newRow.appendChild( teamCol );
 			teamTable.appendChild( newRow );
 		};
 	} else {
 		teamTitle.innerHTML = jsonObj._teams[parseInt( listValue )].name;
-		for ( let i = 2; i < objectLen( jsonObj._config.headers ); i++ ) {
+		for ( let i = 0; i < objectLen( jsonObj._config.teamHeaders ); i++ ) {
 			let newHeader = document.createElement( "th" );
-			newHeader.setAttribute( "onclick", "sortTable(" + ( i - 2 ) + ");" );
-			newHeader.appendChild( document.createTextNode( Object.values( jsonObj._config.headers )[i] ) );
+			newHeader.setAttribute( "onclick", "sortTable(" + ( i ) + ");" );
+			newHeader.appendChild( document.createTextNode( Object.values( jsonObj._config.teamHeaders )[i] ) );
 			headerRow.appendChild( newHeader );
 		};
 		teamTable.appendChild( headerRow );
@@ -69,7 +68,7 @@ function showTeam( listValue ){
 			for ( let n = 0; n < objectLen( jsonObj._teams[parseInt( listValue )].members[i] ); n++ ) {
 				let newCol = document.createElement( "td" );
 				let newContent = null;
-				if ( jsonObj._config.contestMode === 1 && n === 2 ) {
+				if ( jsonObj._config.contestMode === 1 && n === Object.keys( jsonObj._config.teamHeaders).indexOf( "headerMemberScore" ) ) {
 					newContent = document.createTextNode( "N/A" );
 				} else {
 					newContent = document.createTextNode( Object.values( jsonObj._teams[parseInt( listValue )].members[i] )[n] );
@@ -126,7 +125,7 @@ function sortTable( n ){
 						break;
 					};
 				};
-			} else if ( dir == "desc" ) {
+			} else if ( dir === "desc" ) {
 				if ( isNaN( parseInt( x.innerHTML ) ) ) {
 					if ( x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase() ) {
 						shouldSwitch = true;
@@ -153,16 +152,18 @@ function sortTable( n ){
 			};
 		};
 	};
-	for ( i = 0; i < document.getElementsByTagName( "TH" ).length; i++ ) {
-		let changeTab = document.getElementsByTagName( "TH" )[i];
-		if ( changeTab.innerHTML.includes( "\u25B2" ) || changeTab.innerHTML.includes( "\u25BC" ) ) {
-			changeTab.innerHTML = changeTab.innerHTML.substring( 0, changeTab.innerHTML.length - 1 );
+	if ( switchCount > 0 ) {
+		for ( i = 0; i < document.getElementsByTagName( "TH" ).length; i++ ) {
+			let changeTab = document.getElementsByTagName( "TH" )[i];
+			if ( changeTab.innerHTML.includes( "\u25B2" ) || changeTab.innerHTML.includes( "\u25BC" ) ) {
+				changeTab.innerHTML = changeTab.innerHTML.substring( 0, changeTab.innerHTML.length - 1 );
+			};
 		};
-	};
-	if ( dir === "asc" ) {
-		headerTab.innerHTML = headerTab.innerHTML + "&#x25B2;";
-	} else {
-		headerTab.innerHTML = headerTab.innerHTML + "&#x25BC;";
+		if ( dir === "asc" ) {
+			headerTab.innerHTML = headerTab.innerHTML + "&#x25B2;";
+		} else {
+			headerTab.innerHTML = headerTab.innerHTML + "&#x25BC;";
+		};
 	};
 };
 async function initJson( jsonUrl ){
