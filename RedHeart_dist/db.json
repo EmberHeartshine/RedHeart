@@ -1,8 +1,8 @@
 {
 	"_meta": {
-		"version": 1,
-		"date": "2020-09-17",
-		"updatedBy": "somePerson"
+		"version": 2,
+		"date": "2020-09-21",
+		"updatedBy": "Ember Heartshine"
 	},
 	"_config": {
 		"pageTitle": "Example Config",
@@ -19,139 +19,139 @@
 	},
 	"_teams": [
 		{
-			"name": "Team 1",
+			"name": "The Wonderbolts",
 			"members": [
 				{
-					"memberName": "John Doe",
-					"memberDate": "2020-08-20",
-					"memberScore": 1,
-					"verifiedBy": "somePerson"
+					"memberName": "Spitfire",
+					"memberDate": "2011-02-18",
+					"memberScore": 8,
+					"verifiedBy": "Rainbow Dash"
 				},
 				{
-					"memberName": "Jane Doe",
-					"memberDate": "2020-08-25",
-					"memberScore": 1,
-					"verifiedBy": "someOtherPerson"
+					"memberName": "Fleetfoot",
+					"memberDate": "2011-12-03",
+					"memberScore": 5,
+					"verifiedBy": "Rarity"
 				}
 			]
 		},
 		{
-			"name": "Team 2",
+			"name": "The Flim-Flam Brothers",
 			"members": [
 				{
-					"memberName": "Jimmy Doe",
-					"memberDate": "2020-08-20",
-					"memberScore": 1,
-					"verifiedBy": "someOtherPerson"
-				},
-				{
-					"memberName": "Jessica Doe",
-					"memberDate": "2020-08-20",
-					"memberScore": 2,
-					"verifiedBy": "somePerson"
-				}
-			]
-		},
-		{
-			"name": "Team 3",
-			"members": [
-				{
-					"memberName": "Jack Doe",
-					"memberDate": "2020-08-20",
-					"memberScore": 1,
-					"verifiedBy": "someOtherPerson"
-				},
-				{
-					"memberName": "Julia Doe",
-					"memberDate": "2020-08-20",
+					"memberName": "Flim",
+					"memberDate": "2012-02-28",
 					"memberScore": 3,
-					"verifiedBy": "somePerson"
+					"verifiedBy": "Applejack"
 				},
 				{
-					"memberName": "Jeramiah Doe",
-					"memberDate": "2020-08-20",
-					"memberScore": 1,
-					"verifiedBy": "somePerson"
-				}
-			]
-		},
-		{
-			"name": "Team 4",
-			"members": [
-				{
-					"memberName": "Jacob Doe",
-					"memberDate": "2020-08-20",
-					"memberScore": 1,
-					"verifiedBy": "someOtherPerson"
-				},
-				{
-					"memberName": "Jasmine Doe",
-					"memberDate": "2020-08-20",
+					"memberName": "Flam",
+					"memberDate": "2012-02-28",
 					"memberScore": 3,
-					"verifiedBy": "somePerson"
+					"verifiedBy": "Fluttershy"
 				}
 			]
 		},
 		{
-			"name": "Team 5",
+			"name": "The Cutie Mark Crusaders",
 			"members": [
 				{
-					"memberName": "Jenson Doe",
-					"memberDate": "2020-08-20",
-					"memberScore": 1,
-					"verifiedBy": "someOtherPerson"
+					"memberName": "Sweetie Belle",
+					"memberDate": "2010-10-10",
+					"memberScore": 5,
+					"verifiedBy": "Rarity"
 				},
 				{
-					"memberName": "Jade Doe",
-					"memberDate": "2020-08-20",
-					"memberScore": 2,
-					"verifiedBy": "somePerson"
+					"memberName": "Applebloom",
+					"memberDate": "2010-10-10",
+					"memberScore": 6,
+					"verifiedBy": "Applejack"
 				},
 				{
-					"memberName": "Janice Doe",
-					"memberDate": "2020-08-20",
+					"memberName": "Scootaloo",
+					"memberDate": "2010-10-10",
 					"memberScore": 4,
-					"verifiedBy": "somePerson"
-				},
-				{
-					"memberName": "Jed Doe",
-					"memberDate": "2020-08-20",
-					"memberScore": 1,
-					"verifiedBy": "someOtherPerson"
+					"verifiedBy": "Rainbow Dash"
 				}
 			]
 		},
 		{
-			"name": "Team 6",
+			"name": "The Royal Sisters",
 			"members": [
 				{
-					"memberName": "Jay Doe",
-					"memberDate": "2020-08-20",
-					"memberScore": 1,
-					"verifiedBy": "someOtherPerson"
+					"memberName": "Celestia",
+					"memberDate": "2010-10-10",
+					"memberScore": 8,
+					"verifiedBy": "Twilight Sparkle"
 				},
 				{
-					"memberName": "Jennifer Doe",
-					"memberDate": "2020-08-20",
-					"memberScore": 0,						
-					"verifiedBy": "somePerson"
+					"memberName": "Luna",
+					"memberDate": "2010-10-22",
+					"memberScore": 10,
+					"verifiedBy": "Twilight Sparkle"
 				}
 			]
 		},
 		{
-			"name": "Team 7",
+			"name": "The Washouts",
 			"members": [
 				{
-					"memberName": "Jauden Doe",
-					"memberDate": "2020-08-20",
-					"memberScore": 4,
-					"verifiedBy": "someOtherPerson"
+					"memberName": "Lightning Dust",
+					"memberDate": "2012-12-15",
+					"memberScore": 7,
+					"verifiedBy": "Rainbow Dash"
 				},
 				{
-					"memberName": "Josie Doe",
-					"memberDate": "2020-08-20",
+					"memberName": "Rolling Thunder",
+					"memberDate": "2018-09-08",
 					"memberScore": 2,
-					"verifiedBy": "somePerson"
+					"verifiedBy": "Rainbow Dash"
+				},
+				{
+					"memberName": "Short Fuse",
+					"memberDate": "2016-10-15",
+					"memberScore": 4,
+					"verifiedBy": "Rainbow Dash"
+				}
+			]
+		},
+		{
+			"name": "The Pony Tones",
+			"members": [
+				{
+					"memberName": "Toe-Tapper",
+					"memberDate": "2014-02-15",
+					"memberScore": 4,
+					"verifiedBy": "Rarity"
+				},
+				{
+					"memberName": "Big McIntosh",
+					"memberDate": "2010-10-10",
+					"memberScore": 8,						
+					"verifiedBy": "Fluttershy"
+				},
+				{
+					"memberName": "Torch Song",
+					"memberDate": "2014-02-15",
+					"memberScore": 5,						
+					"verifiedBy": "Pinkie Pie"
+				}
+			]
+		},
+		{
+			"name": "Royal Guard",
+			"members": [
+				{
+					"memberName": "Spearhead",
+					"memberDate": "2015-09-19",
+					"memberScore": 6,
+					"verifiedBy": "Twilight Sparkle"
+				},
+				{
+					"memberName": "Zephyr Breeze",
+					"memberDate": "2016-06-04",
+					"memberScore": 0,
+					"verifiedBy": "Fluttershy"
 				}
 			]
 		}
