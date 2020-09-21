@@ -1,7 +1,7 @@
 const dbUrl = "db.json";
 // Make sure to edit the line above if your database is stored on a different server or in a different directory than RedHeart
 
-const rhVersion = "0.0.4";
+const rhVersion = "0.0.5";
 var jsonObj;
 async function rhInit(){
 	console.log( "Initializing RedHeart..." );
@@ -113,14 +113,28 @@ function sortTable( n ){
 			x = rows[i].getElementsByTagName( "TD" )[n];
 			y = rows[i + 1].getElementsByTagName( "TD" )[n];
 			if ( dir === "asc" ) {
-				if ( x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase() ) {
-				shouldSwitch = true;
-				break;
+				if ( isNaN( parseInt( x.innerHTML ) ) ) {
+					if ( x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase() ) {
+						shouldSwitch = true;
+						break;
+					};
+				} else {
+					if ( parseInt( x.innerHTML ) > parseInt( y.innerHTML) ) {
+						shouldSwitch = true;
+						break;
+					};
 				};
 			} else if ( dir == "desc" ) {
-				if ( x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase() ) {
-					shouldSwitch = true;
-					break;
+				if ( isNaN( parseInt( x.innerHTML ) ) ) {
+					if ( x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase() ) {
+						shouldSwitch = true;
+						break;
+					};
+				} else {
+					if ( parseInt( x.innerHTML ) < parseInt( y.innerHTML) ) {
+						shouldSwitch = true;
+						break;
+					};
 				};
 			};
 		};

@@ -68,6 +68,7 @@ td, th{
 }
 th{
 	font-weight: bold;
+	cursor: pointer;
 }
 tr{
 	text-align: center;

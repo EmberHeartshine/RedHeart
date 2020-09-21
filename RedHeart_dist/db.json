@@ -19,7 +19,7 @@
 	},
 	"_teams": [
 		{
-			"name": "The Wonderbolts",
+			"name": "Wonderbolts",
 			"members": [
 				{
 					"memberName": "Spitfire",
@@ -36,7 +36,7 @@
 			]
 		},
 		{
-			"name": "The Flim-Flam Brothers",
+			"name": "Flim-Flam Brothers",
 			"members": [
 				{
 					"memberName": "Flim",
@@ -53,7 +53,7 @@
 			]
 		},
 		{
-			"name": "The Cutie Mark Crusaders",
+			"name": "Cutie Mark Crusaders",
 			"members": [
 				{
 					"memberName": "Sweetie Belle",
@@ -76,7 +76,7 @@
 			]
 		},
 		{
-			"name": "The Royal Sisters",
+			"name": "Royal Sisters",
 			"members": [
 				{
 					"memberName": "Celestia",
@@ -93,7 +93,7 @@
 			]
 		},
 		{
-			"name": "The Washouts",
+			"name": "Washouts",
 			"members": [
 				{
 					"memberName": "Lightning Dust",
@@ -116,7 +116,7 @@
 			]
 		},
 		{
-			"name": "The Pony Tones",
+			"name": "Pony Tones",
 			"members": [
 				{
 					"memberName": "Toe-Tapper",
