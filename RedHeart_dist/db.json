@@ -7,7 +7,7 @@
 	"_config": {
 		"pageTitle": "Example Config",
 		"includeBranding": true,
-		"contestMode": 1,
+		"contestMode": 2,
 		"sumHeaders": {
 			"headerTeam": "Team Name",
 			"headerScore": "Score"
