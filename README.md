@@ -47,7 +47,7 @@ RedHeart is designed to run on a simple web server and should require very littl
 A few caveats:
 * The database JSON file does not need to be stored on the same server as the rest of the files, but be sure to edit the `dbUrl` variable in `redHeart.js` to point to the new location.
 * Date strings under `memberDate` ***must*** be in the format `YYYY-MM-DD`.
-* I took a shortcut to generate the table that speeds up parsing, but it also means that all fields under each `members` object ***must*** be in the order given.
+* I took a shortcut to generate the table that speeds up parsing, but it also means that all fields under each `members` object must be in the same order as all of `_config.headers.headerMember*` items. The order given is probably the easiest way to go.
 * All fields are required (including `memberScore` if using mode 1, though its value will get ignored).
 * You can use the `_meta` object to store any kind of extra data you want, such as a last-changed date. Everything except `version` will be ignored by RedHeart.
 
