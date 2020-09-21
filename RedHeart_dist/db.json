@@ -7,23 +7,15 @@
 	"_config": {
 		"pageTitle": "Example Config",
 		"includeBranding": true,
-		"contestMode": 2,
-		"headers": {
-			"headerTeam": "Team Name",
-			"headerScore": "Score",
-			"headerMemberName": "Name/Handle",
-			"headerMemberDate": "Date Donated",
-			"headerMemberScore": "Score",
-			"headerMemberVerify": "Verified By"
-		},
+		"contestMode": 1,
 		"sumHeaders": {
 			"headerTeam": "Team Name",
 			"headerScore": "Score"
 		},
 		"teamHeaders": {
 			"headerMemberName": "Name/Handle",
-			"headerMemberDate": "Date Donated",
 			"headerMemberScore": "Score",
+			"headerMemberDate": "Date Donated",
 			"headerMemberVerify": "Verified By"
 		}
 	},
@@ -33,14 +25,14 @@
 			"members": [
 				{
 					"memberName": "Spitfire",
-					"memberDate": "2011-02-18",
 					"memberScore": 8,
+					"memberDate": "2011-02-18",
 					"verifiedBy": "Rainbow Dash"
 				},
 				{
 					"memberName": "Fleetfoot",
-					"memberDate": "2011-12-03",
 					"memberScore": 5,
+					"memberDate": "2011-12-03",
 					"verifiedBy": "Rarity"
 				}
 			]
