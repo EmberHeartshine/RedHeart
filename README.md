@@ -15,11 +15,11 @@ RedHeart is designed to run on a simple web server and should require very littl
 		"includeBranding": true,
 		"contestMode": 1,
 		"sumHeaders": {
-			"headerScore": "Score",
-			"headerTeam": "Team Name"
+			"headerTeam": "Team Name",
+			"headerScore": "Score"
 		},
 		"teamHeaders": {
-			"headerMemberName": "Name/Handle"
+			"headerMemberName": "Name/Handle",
 			"headerMemberDate": "Date Donated",
 			"headerMemberScore": "Score",
 			"headerMemberVerify": "Verified By"
