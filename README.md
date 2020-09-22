@@ -19,10 +19,10 @@ RedHeart is designed to run on a simple web server and should require very littl
 			"headerTeam": "Team Name"
 		},
 		"teamHeaders": {
+			"headerMemberName": "Name/Handle"
 			"headerMemberDate": "Date Donated",
 			"headerMemberScore": "Score",
-			"headerMemberVerify": "Verified By",
-			"headerMemberName": "Name/Handle"
+			"headerMemberVerify": "Verified By"
 		}
 	},
 	"_teams": [
